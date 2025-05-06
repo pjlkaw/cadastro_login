@@ -97,7 +97,7 @@ h1 {
     color: #fff;
     font-size: 10px;
     border: none;
-    margin: 15px;
+    cursor: pointer;
 }
 
 #btn-send:hover {

@@ -68,18 +68,20 @@
     })
 
     document.getElementById('dark').addEventListener('click', () => {
+        const cad = document.getElementById('cad');
+        const log = document.getElementById('log');
+
         document.body.style.backgroundColor = 'black';
         document.body.style.color = 'white';
-        document.getElementById('cad').style.backgroundColor = 'black';
-        document.getElementById('cad').style.color = 'white';
-        document.getElementById('cad').style.boxShadow = 'white 0px 0px 10px';
-        document.getElementById('log').style.backgroundColor = 'black';
-        document.getElementById('log').style.color = 'white';
-        document.getElementById('log').style.boxShadow = 'white 0px 0px 10px';
+        cad.style.backgroundColor = 'black';
+        cad.style.boxShadow = 'white 0px 0px 10px';
+        log.style.boxShadow = 'white 0px 0px 10px';
         document.getElementById('dark').style.backgroundColor = 'black';
         document.getElementById('dark').style.color = 'white';
-
+        document.getElementById('dark').style.boxShadow = 'white 0px 0px 10px';
     })
+
+
 
 </script>
 </html>
