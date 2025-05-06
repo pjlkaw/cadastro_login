@@ -1,4 +1,4 @@
-document.getElementById('btn-icon').addEventListener('click', function(){
+document.getElementById('btn-icon').addEventListener('click', function() {
     window.location.href = '../index.html';
 });
 
@@ -7,17 +7,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btnSend) {
         btnSend.addEventListener('click', function(event) {
             event.preventDefault();
-            const usernameInput = document.getElementById('input-username');
-            const passwordInput = document.getElementById('input-pass');
+            const inputUsername = document.getElementById('input-username');
+            const inputPassword = document.getElementById('input-pass');
 
-            if (!usernameInput || !passwordInput || !usernameInput.value.trim() || !passwordInput.value.trim()) {
+            if (!inputUsername || !inputPassword || !inputUsername.value.trim() || !inputPassword.value.trim()) {
                 alert('Por favor, preencha todos os campos.');
                 return;
             }
 
-            const userData = { username: usernameInput.value.trim(), password: passwordInput.value.trim() };
+            const userData = { username: inputUsername.value.trim(), password: inputPassword.value.trim() };
 
-            fetch('http://localhost:3000/Cadastro', { 
+            fetch('http://localhost:3000/cadastro', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

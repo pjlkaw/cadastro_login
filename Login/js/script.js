@@ -1,4 +1,4 @@
-document.getElementById('btn-icon').addEventListener('click', function(){
+document.getElementById('btn-icon').addEventListener('click', function() {
     window.location.href = '../index.html';
 });
 
@@ -7,26 +7,33 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btnSend) {
         btnSend.addEventListener('click', function(event) {
             event.preventDefault();
-            const usernameInput = document.getElementById('input-username');
-            const passwordInput = document.getElementById('input-pass');
+            const inputUsername = document.getElementById('input-username');
+            const inputPassword = document.getElementById('input-pass');
 
-            if (!usernameInput || !passwordInput || !usernameInput.value.trim() || !passwordInput.value.trim()) {
+            if (!inputUsername || !inputPassword || !inputUsername.value.trim() || !inputPassword.value.trim()) {
                 alert('Por favor, preencha todos os campos.');
                 return;
             }
 
-            const userData = { username: usernameInput.value.trim(), password: passwordInput.value.trim() };
+            const userData = { username: inputUsername.value.trim(), password: inputPassword.value.trim() };
 
-            fetch('http://localhost:3000/Login', { 
+            fetch('http://localhost:3000/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(userData)
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) { 
+                    return response.json().then(errData => {
+                        throw new Error(errData.message || 'Falha na requisição');
+                    });
+                }
+                return response.json(); 
+            })
             .then(data => {
-                if (response.status === 200 && data.message === 'Login realizado com sucesso!') {
+                if (data.message === 'Login realizado com sucesso!') {
                     alert('Login realizado com sucesso!');
                     window.location.href = '../index.html';
                 } else {
@@ -35,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => {
                 console.error('Erro:', error);
-                alert('Erro ao tentar fazer login.');
+                alert(error.message || 'Erro ao tentar fazer login.');
             });
         });
     }
