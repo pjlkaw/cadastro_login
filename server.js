@@ -1,3 +1,4 @@
+// server.js
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
@@ -11,9 +12,8 @@ app.use(cors());
 
 const usersPath = path.join(__dirname, 'users.json');
 
-
 // Rota de cadastro
-app.post('/Cadastro', (req, res) => {
+app.post('/Cadastro', (req, res) => { 
     const { username, password } = req.body;
 
     const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
@@ -29,8 +29,8 @@ app.post('/Cadastro', (req, res) => {
     res.status(201).json({ message: 'Usuário cadastrado com sucesso' });
 });
 
-//Rota de Login
-app.post('/Login', (req, res) =>{
+// Rota de login
+app.post('/Login', (req, res) => { 
     const { username, password } = req.body;
 
     const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
