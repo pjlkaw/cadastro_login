@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 99%;
+            height: 90vh;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+            gap: 10rem;
+            justify-content: center;
+            height: 85vh;
+            width: 100%
+        }
+
+        h1 {
+            width: 20rem;
+            font-size: 35px;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: black 0px 0px 10px;
+            text-align: center;
+        }
+
+        #cad {
+            cursor: pointer;
+        }
+        #log {
+            cursor: pointer;
+        }
+
+        h2 {
+            width: 10rem;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: black 0px 0px 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="cad">Cadastro</h1>
+        <h1 id="log">Login</h1>
+    </div>
+        <h2 id="dark">DarkMode</h2>
+    
+</body>
+
+<script>
+    document.getElementById('cad').addEventListener('click', function(){
+        window.location.href = 'Cadastro/index.html'
+    })
+
+    document.getElementById('log').addEventListener('click', function(){
+        window.location.href = 'Login/index.html'
+    })
+
+    document.getElementById('dark').addEventListener('click', () => {
+        document.body.style.backgroundColor = 'black';
+        document.body.style.color = 'white';
+        document.getElementById('cad').style.backgroundColor = 'black';
+        document.getElementById('cad').style.color = 'white';
+        document.getElementById('cad').style.boxShadow = 'white 0px 0px 10px';
+        document.getElementById('log').style.backgroundColor = 'black';
+        document.getElementById('log').style.color = 'white';
+        document.getElementById('log').style.boxShadow = 'white 0px 0px 10px';
+        document.getElementById('dark').style.backgroundColor = 'black';
+        document.getElementById('dark').style.color = 'white';
+
+    })
+
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta username="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./ccs/style.css">
+</head>
+<body>
+    
+    <main id="container">
+
+        <header id="header">
+            <h1>Cadastro</h1>
+            <i  id="btn-icon" class="fa-solid fa-house" onclick="icon_home()"></i>
+        </header>
+
+        <form id="form">
+            <!--Nome-->
+            <div id="q-form">
+                <span for="username" class="label_" id="label_">Nome</span>
+                <input id="input-username" class="input" type="text" username="username" required>
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <!--Senha-->
+            <div id="q-form">
+                <span for="password" class="label_" id="label_">Senha</span>
+                <input id="input-pass" class="input" type="password" required>
+                <i class="fa-solid fa-eye-slash" id="pass-icon" onclick="pass_icon()"></i>
+            </div>
+        </form>
+        <!--Botão-->
+        <button id="btn-send">Enviar</button>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
